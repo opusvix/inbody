@@ -1,0 +1,32 @@
+# Copia este repositório para o GitLab a cada push na branch main.
+# Precisa de dois "secrets" em Settings → Secrets and variables → Actions:
+#   GITLAB_TOKEN    token do GitLab com o escopo write_repository
+#   GITLAB_REPO_URL endereço do projeto no GitLab, sem https://
+#                   exemplo: gitlab.com/seu-usuario/seu-projeto.git
+name: Espelho no GitLab
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  espelhar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar o histórico completo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Enviar para o GitLab
+        env:
+          GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
+          GITLAB_REPO_URL: ${{ secrets.GITLAB_REPO_URL }}
+        run: |
+          if [ -z "$GITLAB_TOKEN" ] || [ -z "$GITLAB_REPO_URL" ]; then
+            echo "::warning::Secrets GITLAB_TOKEN e GITLAB_REPO_URL ainda não configurados; espelho ignorado."
+            exit 0
+          fi
+          git push --force "https://oauth2:${GITLAB_TOKEN}@${GITLAB_REPO_URL}" HEAD:main
+          git push --force --tags "https://oauth2:${GITLAB_TOKEN}@${GITLAB_REPO_URL}"
