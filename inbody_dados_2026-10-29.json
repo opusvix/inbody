@@ -1,0 +1,71 @@
+{
+  "titular": "Maurício Barros",
+  "fonte": "Laudos InBody120",
+  "gerado": "2026-10-29T17:18:07.177Z",
+  "exames": [
+    {
+      "date": "2025-11-21",
+      "peso": 80.7,
+      "gordura": 22.8,
+      "pgc": 28.3,
+      "smm": 32.1,
+      "agua": 42.4,
+      "proteina": 11.3,
+      "minerais": 4.16,
+      "ffm": 57.9,
+      "tmb": 1619,
+      "imc": 26.4,
+      "visceral": 10,
+      "whr": 0.92,
+      "pontuacao": 67
+    },
+    {
+      "date": "2026-02-24",
+      "peso": 74.3,
+      "gordura": 19.9,
+      "pgc": 26.8,
+      "smm": 30,
+      "agua": 40,
+      "proteina": 10.6,
+      "minerais": 3.78,
+      "ffm": 54.4,
+      "tmb": 1544,
+      "imc": 24.3,
+      "visceral": 8,
+      "whr": 0.88,
+      "pontuacao": 67
+    },
+    {
+      "date": "2026-06-15",
+      "peso": 73.9,
+      "gordura": 18.6,
+      "pgc": 25.2,
+      "smm": 30.4,
+      "agua": 40.6,
+      "proteina": 10.7,
+      "minerais": 3.89,
+      "ffm": 55.3,
+      "tmb": 1564,
+      "imc": 24.1,
+      "visceral": 8,
+      "whr": 0.87,
+      "pontuacao": 69
+    },
+    {
+      "date": "2026-10-22",
+      "peso": 72.3,
+      "gordura": 17.6,
+      "pgc": 24.4,
+      "smm": 30.3,
+      "agua": 40.1,
+      "proteina": 10.7,
+      "minerais": 3.85,
+      "ffm": 54.7,
+      "tmb": 1550,
+      "imc": 23.6,
+      "visceral": 8,
+      "whr": 0.89,
+      "pontuacao": 69
+    }
+  ]
+}
