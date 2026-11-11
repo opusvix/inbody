@@ -1,0 +1,12 @@
+# Publica o app no GitLab Pages (cópia de reserva do GitHub Pages).
+# O site é estático: basta copiar os arquivos para a pasta "public".
+pages:
+  image: alpine:3.20
+  script:
+    - mkdir -p public
+    - cp -r index.html inbody-pc.html inbody-icon.ico *.json *.csv *.md docs public/
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
