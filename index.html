@@ -1,3 +1,660 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=inbody-pc.html"><title>InBody</title></head>
-<body><a href="inbody-pc.html">Abrir o app InBody</a></body></html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>InBody — Composição Corporal</title>
+<meta name="theme-color" content="#1f6feb">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNTYiIGhlaWdodD0iMjU2IiB2aWV3Qm94PSIwIDAgMjU2IDI1NiIgeG1sbnM6YzJwYT0iaHR0cDovL2MycGEub3JnL21hbmlmZXN0Ij4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMzYTg2ZmYiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMGI0ZmMwIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMjU2IiBoZWlnaHQ9IjI1NiIgcng9IjU2IiBmaWxsPSJ1cmwoI2cpIi8+CiAgPGNpcmNsZSBjeD0iMTI4IiBjeT0iOTIiIHI9IjMzIiBmaWxsPSIjZmZmZmZmIi8+CiAgPHBhdGggZD0iTTEyOCAxMzRjLTMxIDAtNTQgMjEtNTggNTFsLTIgMTdjLTEgOCA1IDE1IDEzIDE1aDk0YzggMCAxNC03IDEzLTE1bC0yLTE3Yy00LTMwLTI3LTUxLTU4LTUxeiIgZmlsbD0iI2ZmZmZmZiIvPgogIDxwb2x5bGluZSBwb2ludHM9IjE1MCwyMDUgMTcxLDE4NCAxOTIsMTkzIDIxNCwxNjgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2JjZDZmZiIgc3Ryb2tlLXdpZHRoPSIxMCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBvcGFjaXR5PSIwLjkiLz4KPG1ldGFkYXRhPjxjMnBhOm1hbmlmZXN0PkFBQVdnbXAxYldJQUFBQWVhblZ0WkdNeWNHRUFFUUFRZ0FBQXFnQTRtM0VEWXpKd1lRQUFBQlpjYW5WdFlnQUFBRWRxZFcxa1l6SnRZUUFSQUJDQUFBQ3FBRGliY1FOMWNtNDZZekp3WVRvek5qUmxNamt5WXkwMlpEVTRMVFEzT0RJdFlURTRPUzFrTlRBME1EYzRNbUU1TjJFQUFBQURsMnAxYldJQUFBQXBhblZ0WkdNeVlYTUFFUUFRZ0FBQXFnQTRtM0VEWXpKd1lTNWhjM05sY25ScGIyNXpBQUFBQUx4cWRXMWlBQUFBUkdwMWJXUmpZbTl5QUJFQUVJQUFBS29BT0p0eEUyTXljR0V1YVc1bmNtVmthV1Z1ZEM1Mk13QUFBQUFZWXpKemFCMUJKK0Zlc2V2aVRLSU1MMVkycnlRQUFBQndZMkp2Y3FOcFpHTTZabTl5YldGMGJXbHRZV2RsTDNOMlp5dDRiV3hxYVc1emRHRnVZMlZKUkhnc2VHMXdPbWxwWkRvME5UazJNV1ZpTVMxbE4yWXdMVFF6TTJJdE9UYzVPUzB5WkRFMk0yRTBZMlZoTWpKc2NtVnNZWFJwYjI1emFHbHdhSEJoY21WdWRFOW1BQUFCNG1wMWJXSUFBQUJCYW5WdFpHTmliM0lBRVFBUWdBQUFxZ0E0bTNFVFl6SndZUzVoWTNScGIyNXpMbll5QUFBQUFCaGpNbk5vekNqRWxWaDh4NG9Wci96d3NvcDJMd0FBQVpsalltOXlvbWRoWTNScGIyNXpncUptWVdOMGFXOXVhMk15Y0dFdWIzQmxibVZrYW5CaGNtRnRaWFJsY25PaGEybHVaM0psWkdsbGJuUnpnYUpqZFhKc2VDMXpaV3htSTJwMWJXSm1QV015Y0dFdVlYTnpaWEowYVc5dWN5OWpNbkJoTG1sdVozSmxaR2xsYm5RdWRqTmthR0Z6YUZnZzExc1d6QmdMNHhhcUVqaDBUL1g1OTlsM2lsS1MydXVrekdJaW9lYjEzOGFrWm1GamRHbHZibmdkWTI5dExtRnVkR2h5YjNCcFl5NWpiR0YxWkdVdWNISnZkbWxrWldScWNHRnlZVzFsZEdWeWM2RjRIMk52YlM1aGJuUm9jbTl3YVdNdWIzSnBaMmx1TFdOdmJtWnBaR1Z1WTJWbmRXNXJibTkzYm10a1pYTmpjbWx3ZEdsdmJuaG1RMnhoZFdSbElIQnliM1pwWkdWa0lIUm9hWE1nWm1sc1pTQmhkQ0IwYUdVZ2NtVnhkV1Z6ZENCdlppQmhJSFZ6WlhJZ1lXNWtJRzFoZVNCb1lYWmxJR055WldGMFpXUWdiM0lnYlc5a2FXWnBaV1FnZEdobElHWnBiR1VnWTI5dWRHVnVkSE11YlhOdlpuUjNZWEpsUVdkbGJuU2haRzVoYldWbVEyeGhkV1JsY21Gc2JFRmpkR2x2Ym5OSmJtTnNkV1JsWlBVQUFBRElhblZ0WWdBQUFFQnFkVzFrWTJKdmNnQVJBQkNBQUFDcUFEaWJjUk5qTW5CaExtaGhjMmd1WkdGMFlRQUFBQUFZWXpKemFGeEt4eEpLYllEMWMybFZBYXNNUkEwQUFBQ0FZMkp2Y3FWallXeG5abk5vWVRJMU5tTndZV1JNQUFBQUFBQUFBQUFBQUFBQVpHaGhjMmhZSUxKcjBDczdiZFJsZWlRbzhIeEM4c3NELzBmTlphOStLVTdXSkRyQjFVd3ZaRzVoYldWdWFuVnRZbVlnYldGdWFXWmxjM1JxWlhoamJIVnphVzl1YzRHaVpYTjBZWEowR1FMZFpteGxibWQwYUJrZUJBQUFBajVxZFcxaUFBQUFKMnAxYldSak1tTnNBQkVBRUlBQUFLb0FPSnR4QTJNeWNHRXVZMnhoYVcwdWRqSUFBQUFDRDJOaWIzS2xZMkZzWjJaemFHRXlOVFpwYzJsbmJtRjBkWEpsZUUxelpXeG1JMnAxYldKbVBTOWpNbkJoTDNWeWJqcGpNbkJoT2pNMk5HVXlPVEpqTFRaa05UZ3RORGM0TWkxaE1UZzVMV1ExTURRd056Z3lZVGszWVM5ak1uQmhMbk5wWjI1aGRIVnlaV3BwYm5OMFlXNWpaVWxFZUN4NGJYQTZhV2xrT21RMU1qVTVOekJqTFdNMk9HSXRORGhrTnkwNU5tUXpMV1ZoTXpJeFpqTTBZekkyWVhKamNtVmhkR1ZrWDJGemMyVnlkR2x2Ym5PRG9tTjFjbXg0TFhObGJHWWphblZ0WW1ZOVl6SndZUzVoYzNObGNuUnBiMjV6TDJNeWNHRXVhVzVuY21Wa2FXVnVkQzUyTTJSb1lYTm9XQ0RYV3hiTUdBdmpGcW9TT0hSUDlmbjMyWGVLVXBMYTY2VE1ZaUtoNXZYZnhxSmpkWEpzZUNwelpXeG1JMnAxYldKbVBXTXljR0V1WVhOelpYSjBhVzl1Y3k5ak1uQmhMbUZqZEdsdmJuTXVkakprYUdGemFGZ2dZdnlSL1ppN3A1QjdLQU5xTmdKQ1ZsMTNSVC9DcCsydHp6d3pPeitiYlJ1aVkzVnliSGdwYzJWc1ppTnFkVzFpWmoxak1uQmhMbUZ6YzJWeWRHbHZibk12WXpKd1lTNW9ZWE5vTG1SaGRHRmthR0Z6YUZnZ1dyRmFqVWlJTEZ3WVdFeEZFTGk1TjllUW1wQlhZcFBDOEQwQ3hzQlJhSVIwWTJ4aGFXMWZaMlZ1WlhKaGRHOXlYMmx1Wm0ralpHNWhiV1Z2UVc1MGFISnZjR2xqSUVacGJHVnpaM1psY25OcGIyNWxNUzR3TGpCcmMzQmxZMVpsY25OcGIyNWxNaTQwTGpBQUFCQTRhblZ0WWdBQUFDaHFkVzFrWXpKamN3QVJBQkNBQUFDcUFEaWJjUU5qTW5CaExuTnBaMjVoZEhWeVpRQUFBQkFJWTJKdmN0S0VXUUlTb2dFbUdDRlpBZ293Z2dJR01JSUJqYUFEQWdFQ0FoUkE1YUFLN3NJNTBMNjRnL29HUWdVOVoxVVRBREFLQmdncWhrak9QUVFEQXpCSk1SY3dGUVlEVlFRS0V3NUJiblJvY205d2FXTXNJRkJDUXpFdU1Dd0dBMVVFQXhNbFFXNTBhSEp2Y0dsaklFTnZiblJsYm5RZ1EzSmxaR1Z1ZEdsaGJITWdVbTl2ZENCRFFUQWVGdzB5TmpBNE1EY3hPRFF6TlRaYUZ3MHlPREE0TURZeE9UUXpOVFphTUVReEZ6QVZCZ05WQkFvVERrRnVkR2h5YjNCcFl5d2dVRUpETVNrd0p3WURWUVFERXlCQmJuUm9jbTl3YVdNZ1EyeGhkV1JsSUVOdmJuUmxiblFnVTJsbmJtbHVaekJaTUJNR0J5cUdTTTQ5QWdFR0NDcUdTTTQ5QXdFSEEwSUFCSmg2Q212TFVCZ0ZGTlUwdlVLbE9WdEU2ZGpkMTdMNVN1d1gwTGVtRmlzQk0zZGtkLzNjeWp4RkEzUW81UzQ2ZlgwL2loWTBWWjdtZmI5S0Y3MDN0NU9qV0RCV01BNEdBMVVkRHdFQi93UUVBd0lIZ0RBVkJnTlZIU1VFRGpBTUJnb3JCZ0VFQVlQb1hnSUJNQXdHQTFVZEV3RUIvd1FDTUFBd0h3WURWUjBqQkJnd0ZvQVV6bEhpQklGT1pGc2orT1BFejVvK25NSFhYTUl3Q2dZSUtvWkl6ajBFQXdNRFp3QXdaQUl3TVhNZEZKNEJldExMVlk3T1J1RTlub3FiYkFaT1puL2FBclh5VHdGQVpmS3JQenhGMnZQb0pOZjErVUNkZzFYR0FqQndYMXpkOVdHcVlrcW1MNVNGcXcxUXlTanIxekpmcEpNOSsxcmREd1NQTE1PUE9qS3VpWGpvVS9wVVVlRzlSd21oWTNCaFpGa05uZ0FBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQVBaWVFNcjVVbm9mTkwzcXFDTFYvRUJmSnc2cElieEJxbFJXYks2bEoxaWcraVAzeFJpUFRKUTYzeHVVeXpoM2lsQTd3WUIzOGpKQkI0U2kxcVZQTGlFQTQxbz08L2MycGE6bWFuaWZlc3Q+PC9tZXRhZGF0YT48L3N2Zz4K">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<style>
+  :root{
+    --bg:#eef1f5; --surface:#ffffff; --surface-2:#f3f6f9; --fg:#1a2230; --muted:#5b6676;
+    --line:#dde3ea; --accent:#1f6feb; --accent-weak:rgba(31,111,235,.12);
+    --good:#1a8f5a; --good-weak:rgba(26,143,90,.14);
+    --warn:#b9770f; --warn-weak:rgba(185,119,15,.15);
+    --crit:#c23b3b; --crit-weak:rgba(194,59,59,.14);
+    --sans:'IBM Plex Sans',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --bg:#0f141b; --surface:#171e27; --surface-2:#1d2630; --fg:#e8edf3; --muted:#9aa7b5;
+    --line:#2a343f; --accent:#5a97f6; --accent-weak:rgba(90,151,246,.18);
+    --good:#37b67e; --good-weak:rgba(55,182,126,.18);
+    --warn:#d79a3e; --warn-weak:rgba(215,154,62,.18);
+    --crit:#e06a6a; --crit-weak:rgba(224,106,106,.18);
+    color-scheme:dark;
+  }}
+  :root[data-theme="dark"]{
+    --bg:#0f141b; --surface:#171e27; --surface-2:#1d2630; --fg:#e8edf3; --muted:#9aa7b5;
+    --line:#2a343f; --accent:#5a97f6; --accent-weak:rgba(90,151,246,.18);
+    --good:#37b67e; --good-weak:rgba(55,182,126,.18);
+    --warn:#d79a3e; --warn-weak:rgba(215,154,62,.18);
+    --crit:#e06a6a; --crit-weak:rgba(224,106,106,.18);
+    color-scheme:dark;
+  }
+  *{box-sizing:border-box}
+  body{background:var(--bg);color:var(--fg);font-family:var(--sans);line-height:1.5;margin:0;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:980px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 56px}
+  h1,h2,h3{margin:0;text-wrap:balance}
+  .mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  header.app{display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px 20px;justify-content:space-between;padding-bottom:18px;border-bottom:1px solid var(--line)}
+  .app .who{display:flex;flex-direction:column;gap:3px;min-width:0}
+  .app h1{font-size:23px;font-weight:600;letter-spacing:-.01em}
+  .app .sub{font-size:13px;color:var(--muted)}
+  .app .sub b{color:var(--fg);font-weight:600}
+  .actions{display:flex;gap:8px;flex-wrap:wrap}
+  button,.filebtn{font-family:var(--sans);font-size:14px;font-weight:600;border-radius:9px;border:1px solid var(--line);background:var(--surface);color:var(--fg);padding:9px 14px;cursor:pointer;transition:background .12s,border-color .12s;display:inline-flex;align-items:center;gap:6px}
+  button:hover,.filebtn:hover{border-color:var(--accent)}
+  button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  button.primary:hover{filter:brightness(1.06)}
+  button:focus-visible,input:focus-visible,.filebtn:focus-within{outline:2px solid var(--accent);outline-offset:2px}
+  button.danger{border-color:var(--crit);color:var(--crit)}
+  button:disabled{opacity:.5;cursor:not-allowed}
+  /* Drive bar */
+  .drivebar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:var(--surface);font-size:13px}
+  .drivebar .dot{width:9px;height:9px;border-radius:999px;background:var(--muted);flex:none}
+  .drivebar.on .dot{background:var(--good)}
+  .drivebar.err .dot{background:var(--crit)}
+  .drivebar .dtext{color:var(--muted);flex:1 1 auto;min-width:160px}
+  .drivebar .dtext b{color:var(--fg);font-weight:600}
+  section{margin-top:26px}
+  .sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:12px}
+  .sec-head h2{font-size:15px;font-weight:600}
+  .sec-head .note{font-size:12px;color:var(--muted)}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+  .kpi{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 15px;display:flex;flex-direction:column;gap:7px}
+  .kpi .k-label{font-size:12px;color:var(--muted);font-weight:500}
+  .kpi .k-val{font-family:var(--mono);font-size:26px;font-weight:600;letter-spacing:-.02em;line-height:1}
+  .kpi .k-val .u{font-size:13px;color:var(--muted);font-weight:500;margin-left:3px}
+  .kpi .k-delta{font-family:var(--mono);font-size:12px;font-weight:500;display:inline-flex;align-items:center;gap:5px}
+  .k-delta .chip{padding:2px 7px;border-radius:999px}
+  .chip.up{background:var(--good-weak);color:var(--good)}
+  .chip.down{background:var(--crit-weak);color:var(--crit)}
+  .chip.flat{background:var(--surface-2);color:var(--muted)}
+  .k-delta .cmp{color:var(--muted)}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
+  .chart-wrap{overflow-x:auto}
+  svg.chart{display:block;width:100%;height:auto;min-width:300px}
+  .chart .grid{stroke:var(--line)} .chart .cap{fill:var(--muted);font-family:var(--mono);font-size:11px}
+  .chart .val{fill:var(--fg);font-family:var(--mono);font-size:11px}
+  .chart .ln{fill:none;stroke-width:2}
+  .chart .ln.peso{stroke:var(--muted)} .chart .ln.smm{stroke:var(--muted);stroke-dasharray:5 4} .chart .ln.gordura{stroke:var(--accent);stroke-width:2.6}
+  .chart .dot{stroke:var(--surface);stroke-width:1.5}
+  .dot.peso,.dot.smm{fill:var(--muted)} .dot.gordura{fill:var(--accent)}
+  .chart .slabel{font-family:var(--mono);font-size:11px;font-weight:600}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:10px;font-size:12px;color:var(--muted)}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .legend i{width:16px;height:0;border-top:2.4px solid;display:inline-block}
+  .lg-peso i{border-color:var(--muted)} .lg-smm i{border-color:var(--muted);border-top-style:dashed} .lg-gordura i{border-color:var(--accent)}
+  .tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+  table{border-collapse:collapse;width:100%;min-width:560px;font-size:13px}
+  th,td{padding:9px 12px;text-align:right;white-space:nowrap;border-bottom:1px solid var(--line)}
+  th:first-child,td:first-child{text-align:left;position:sticky;left:0;background:var(--surface)}
+  thead th{font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);font-weight:600;background:var(--surface-2)}
+  thead th:first-child{background:var(--surface-2)}
+  tbody tr.ex{cursor:pointer}
+  tbody tr.ex:hover td{background:var(--accent-weak)}
+  tbody tr.ex:hover td:first-child{background:var(--accent-weak)}
+  td.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+  .flag{display:inline-block;width:8px;height:8px;border-radius:999px;margin-left:6px;vertical-align:middle}
+  .flag.ok{background:var(--good)} .flag.warn{background:var(--warn)} .flag.crit{background:var(--crit)}
+  .ref-row td{color:var(--muted);font-size:11.5px;background:var(--surface-2)}
+  .tabs{display:flex;gap:4px;margin-top:18px;border-bottom:1px solid var(--line)}
+  .tab{appearance:none;border:none;background:none;font-family:var(--sans);font-size:14px;font-weight:600;color:var(--muted);padding:10px 14px;cursor:pointer;border-bottom:2px solid transparent}
+  .tab:hover{color:var(--fg)} .tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+  .interp{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
+  .interp .status-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+  .st{display:inline-flex;align-items:center;gap:5px;font-family:var(--mono);font-size:12.5px;font-weight:600;padding:5px 11px;border-radius:999px}
+  .st .lbl{font-weight:500;color:var(--muted);font-family:var(--sans)}
+  .st.ok{background:var(--good-weak);color:var(--good)} .st.warn{background:var(--warn-weak);color:var(--warn)} .st.crit{background:var(--crit-weak);color:var(--crit)} .st.flat{background:var(--surface-2);color:var(--muted)}
+  .delta-row{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px}
+  .dl{font-family:var(--mono);font-size:12px;font-weight:500;padding:4px 9px;border-radius:999px;display:inline-flex;gap:6px;align-items:center;background:var(--surface-2)}
+  .dl .dn{color:var(--muted)} .dl.good .dv{color:var(--good)} .dl.bad .dv{color:var(--crit)} .dl.flat .dv{color:var(--muted)}
+  .interp p.nar{font-size:14px;line-height:1.6;margin:0 0 10px} .interp .disc{font-size:11.5px;color:var(--muted);margin:0}
+  .hist-item{margin-bottom:16px}
+  .hist-item .hh{display:flex;align-items:baseline;gap:10px;margin-bottom:8px}
+  .hist-item .hh h3{font-size:15px;font-weight:600} .hist-item .hh .tag{font-size:11px;font-family:var(--mono);color:var(--muted)}
+  .overlay{position:fixed;inset:0;background:rgba(10,15,22,.55);display:flex;align-items:flex-start;justify-content:center;padding:16px 16px 32px;overflow:auto;z-index:50}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;max-width:680px;width:100%;margin-top:28px;padding:20px}
+  .panel h2{font-size:18px;font-weight:600;margin-bottom:4px}
+  .panel .lead{font-size:13px;color:var(--muted);margin-bottom:16px}
+  .grid-f{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+  .field{display:flex;flex-direction:column;gap:5px}
+  .field label{font-size:12px;font-weight:500;color:var(--muted)} .field label .req{color:var(--accent)}
+  .field input{font-family:var(--mono);font-size:14px;padding:9px 10px;border-radius:8px;border:1px solid var(--line);background:var(--surface-2);color:var(--fg);width:100%}
+  .field.bad input{border-color:var(--crit);background:var(--crit-weak)}
+  .field .u{font-size:11px;color:var(--muted)}
+  .grp-title{grid-column:1/-1;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-family:var(--mono);margin-top:6px}
+  .banner{border-radius:10px;padding:12px 14px;font-size:13px;margin-bottom:14px;display:none}
+  .banner.show{display:block}
+  .banner.miss{background:var(--warn-weak);color:var(--warn);border:1px solid var(--warn)}
+  .banner.sum{background:var(--crit-weak);color:var(--crit);border:1px solid var(--crit)}
+  .banner b{font-weight:600}
+  .panel-actions{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;margin-top:18px}
+  .panel-actions .left{display:flex;gap:8px;flex-wrap:wrap}
+  .exp-btns{display:flex;flex-direction:column;gap:10px;margin:6px 0 2px}
+  .exp-btns button{width:100%;text-align:left;padding:12px 14px}
+  .empty{background:var(--surface);border:1px dashed var(--line);border-radius:12px;padding:30px 20px;text-align:center;color:var(--muted)}
+  .empty h3{color:var(--fg);font-size:16px;margin-bottom:6px}
+  .empty .actions{justify-content:center;margin-top:16px}
+  .foot{margin-top:30px;padding-top:16px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
+  .foot code{font-family:var(--mono);background:var(--surface-2);padding:1px 5px;border-radius:4px}
+  #toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:var(--fg);color:var(--bg);font-size:13px;font-weight:500;padding:10px 16px;border-radius:10px;box-shadow:0 6px 24px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .2s;z-index:80;max-width:90vw}
+  #toast.show{opacity:1}
+  [hidden]{display:none!important}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="app">
+    <div class="who">
+      <span class="eyebrow">Bioimpedância · InBody120</span>
+      <h1>Composição corporal</h1>
+      <span class="sub">Acompanhamento de <b id="person">Maurício Barros</b></span>
+    </div>
+    <div class="actions">
+      <button id="btn-theme" title="Alternar tema">Tema</button>
+      <label class="filebtn" for="imp-file">⬆ Importar</label>
+      <input id="imp-file" type="file" accept=".json,application/json" hidden>
+      <button id="btn-export" hidden>⬇ Exportar</button>
+      <button id="btn-new" class="primary">+ Nova medição</button>
+    </div>
+  </header>
+
+  <div class="drivebar" id="drivebar">
+    <span class="dot"></span>
+    <span class="dtext" id="drive-status">Dados guardados neste navegador. Conecte o Google Drive para sincronizar entre dispositivos.</span>
+    <button id="btn-drive">☁ Conectar Google Drive</button>
+  </div>
+
+  <div class="tabs" id="tabs" hidden>
+    <button class="tab active" id="tab-painel" type="button">Painel</button>
+    <button class="tab" id="tab-historico" type="button">Histórico</button>
+  </div>
+
+  <div id="app-body"></div>
+  <div class="foot" id="foot"></div>
+</div>
+
+<div class="overlay" id="overlay" hidden>
+  <form class="panel" id="form" novalidate>
+    <h2 id="form-title">Nova medição</h2>
+    <p class="lead">Preencha os campos do laudo. Ao salvar, o app confere o que falta ou não fecha — e aponta exatamente onde. Clique numa linha da tabela para editar.</p>
+    <div class="banner miss" id="banner-miss"></div>
+    <div class="banner sum" id="banner-sum"></div>
+    <div class="grid-f" id="form-fields"></div>
+    <div class="panel-actions">
+      <div class="left">
+        <button type="button" id="btn-cancel">Cancelar</button>
+        <button type="button" id="btn-del" class="danger" hidden>Excluir</button>
+      </div>
+      <button type="submit" class="primary">Salvar medição</button>
+    </div>
+  </form>
+</div>
+
+<div class="overlay" id="export-overlay" hidden>
+  <div class="panel" style="max-width:480px">
+    <h2>Exportar</h2>
+    <p class="lead">Baixe uma cópia dos seus dados ou um relatório legível.</p>
+    <div class="exp-btns">
+      <button type="button" id="exp-md" class="primary">📄 Relatório com interpretações (.md)</button>
+      <button type="button" id="exp-json">🗄️ Dados / backup (.json)</button>
+      <button type="button" id="exp-csv">📊 Planilha (.csv)</button>
+    </div>
+    <div class="panel-actions"><div class="left"></div><button type="button" id="exp-close">Fechar</button></div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+(function(){
+  "use strict";
+
+  // ================== CONFIG GOOGLE DRIVE ==================
+  // Cole aqui o Client ID gerado no Google Cloud (tipo "Aplicativo da Web").
+  // Não é segredo — pode ficar público no código.
+  var GDRIVE = {
+    clientId: '486876452934-50jb7i8j88e8prdb8q8ffalh0kfr13m1.apps.googleusercontent.com',
+    scope: 'https://www.googleapis.com/auth/drive.file',
+    fileName: 'inbody.json'
+  };
+  // ========================================================
+
+  var FIELDS = [
+    {key:'date',     label:'Data do exame', unit:'', req:true, type:'date', group:'Principais'},
+    {key:'peso',     label:'Peso', unit:'kg', req:true, group:'Principais'},
+    {key:'gordura',  label:'Massa de Gordura', unit:'kg', req:true, group:'Principais'},
+    {key:'pgc',      label:'% Gordura (PGC)', unit:'%', req:true, group:'Principais'},
+    {key:'smm',      label:'Massa Muscular Esquelética', unit:'kg', req:true, group:'Principais'},
+    {key:'agua',     label:'Água Corporal Total', unit:'L', group:'Composição (checagem de soma)'},
+    {key:'proteina', label:'Proteína', unit:'kg', group:'Composição (checagem de soma)'},
+    {key:'minerais', label:'Minerais', unit:'kg', group:'Composição (checagem de soma)'},
+    {key:'ffm',      label:'Massa Livre de Gordura', unit:'kg', group:'Índices complementares'},
+    {key:'tmb',      label:'Taxa Metabólica Basal', unit:'kcal', group:'Índices complementares'},
+    {key:'imc',      label:'IMC', unit:'kg/m²', group:'Índices complementares', ref:{max:25, soft:true}},
+    {key:'visceral', label:'Gordura Visceral', unit:'nível', group:'Índices complementares', ref:{max:9}},
+    {key:'whr',      label:'Cintura-Quadril', unit:'', group:'Índices complementares', ref:{max:0.90}},
+    {key:'pontuacao',label:'Pontuação InBody', unit:'/100', group:'Índices complementares'}
+  ];
+  var BY={}; FIELDS.forEach(function(f){BY[f.key]=f;});
+  var REQUIRED=FIELDS.filter(function(f){return f.req;});
+  var KEY='inbody_data_v1', TKEY='inbody_theme';
+  var state={rows:[], tab:'painel', editing:null, updatedAt:''};
+  var $=function(id){return document.getElementById(id);};
+
+  function num(v){ if(v===null||v===undefined||v==='') return null; var n=Number(String(v).replace(',','.')); return isFinite(n)?n:null; }
+  function nn(v){ return v!==null && v!==undefined; }
+  function fmt(v,d){ if(!nn(v)) return '—'; return Number(v).toFixed(d===undefined?1:d).replace('.',','); }
+  function signed(v,d){ if(!nn(v)) return '—'; return (v>=0?'+':'−')+fmt(Math.abs(v),d); }
+  function brDate(iso){ if(!iso) return '—'; var p=String(iso).split('-'); return p.length===3? (p[2]+'/'+p[1]+'/'+p[0].slice(2)) : iso; }
+  function decs(k){ return (k==='visceral'||k==='pontuacao')?0:(k==='whr'?2:1); }
+  function sorted(){ return state.rows.slice().sort(function(a,b){return (a.date||'').localeCompare(b.date||'');}); }
+  function nowTime(){ var d=new Date(); function p(n){return (n<10?'0':'')+n;} return p(d.getHours())+':'+p(d.getMinutes()); }
+
+  // ---- storage (cache local + fonte no Drive) ----
+  function load(){ try{ var raw=localStorage.getItem(KEY); if(!raw) return; var o=JSON.parse(raw); if(Array.isArray(o)){ state.rows=o; state.updatedAt=''; } else { state.rows=o.exames||[]; state.updatedAt=o.updatedAt||''; } }catch(e){} }
+  function persist(){ try{ localStorage.setItem(KEY, JSON.stringify({updatedAt:state.updatedAt, exames:state.rows})); }catch(e){} }
+  function touch(){ state.updatedAt=new Date().toISOString(); }
+  function toast(t){ var el=$('toast'); el.textContent=t; el.classList.add('show'); clearTimeout(toast._t); toast._t=setTimeout(function(){ el.classList.remove('show'); },3200); }
+
+  // ---- theme ----
+  (function(){ try{ var t=localStorage.getItem(TKEY); if(t) document.documentElement.setAttribute('data-theme',t); }catch(e){} })();
+  $('btn-theme').addEventListener('click', function(){
+    var r=document.documentElement, cur=r.getAttribute('data-theme');
+    var dark = cur? cur==='dark' : window.matchMedia('(prefers-color-scheme:dark)').matches;
+    var nx=dark?'light':'dark'; r.setAttribute('data-theme',nx); try{ localStorage.setItem(TKEY,nx); }catch(e){}
+  });
+
+  // ================== GOOGLE DRIVE ==================
+  var drive={ token:null, expiry:0, fileId:null, connected:false, client:null };
+  var pending=null;
+  function gisReady(){ return window.google && google.accounts && google.accounts.oauth2; }
+  function configured(){ return GDRIVE.clientId && GDRIVE.clientId.indexOf('COLE_AQUI')<0; }
+  function driveStatus(txt, cls){ var bar=$('drivebar'), s=$('drive-status'); if(s) s.innerHTML=txt; if(bar){ bar.classList.remove('on','err'); if(cls) bar.classList.add(cls); } }
+  function updateDriveUI(){ var b=$('btn-drive'); if(!b) return; if(drive.connected){ b.textContent='☁ Drive conectado'; b.classList.remove('primary'); } else { b.textContent='☁ Conectar Google Drive'; } }
+
+  function initClient(){
+    drive.client = google.accounts.oauth2.initTokenClient({
+      client_id: GDRIVE.clientId, scope: GDRIVE.scope,
+      callback: function(resp){
+        var p=pending; pending=null;
+        if(resp && resp.access_token){ drive.token=resp.access_token; drive.expiry=Date.now()+((resp.expires_in||3300)*1000); if(p) p.resolve(drive.token); }
+        else { if(p) p.reject((resp&&resp.error)||'no_token'); }
+      }
+    });
+  }
+  function getToken(interactive){
+    return new Promise(function(resolve,reject){
+      if(drive.token && Date.now()<drive.expiry-60000) return resolve(drive.token);
+      if(!gisReady()) return reject('gis_unready');
+      if(!drive.client) initClient();
+      pending={resolve:resolve,reject:reject};
+      try{ drive.client.requestAccessToken(interactive?{}:{prompt:''}); }catch(e){ pending=null; reject(e); }
+    });
+  }
+  function dfetch(url,opts){ opts=opts||{}; opts.headers=opts.headers||{}; opts.headers['Authorization']='Bearer '+drive.token; return fetch(url,opts); }
+  function findFile(){
+    var q="name='"+GDRIVE.fileName+"' and trashed=false";
+    return dfetch("https://www.googleapis.com/drive/v3/files?spaces=drive&fields=files(id,name,modifiedTime)&q="+encodeURIComponent(q))
+      .then(function(r){ if(!r.ok) throw 'list_'+r.status; return r.json(); })
+      .then(function(j){ var f=j.files&&j.files[0]; drive.fileId=f?f.id:null; return f||null; });
+  }
+  function downloadFile(){ if(!drive.fileId) return Promise.resolve(null); return dfetch("https://www.googleapis.com/drive/v3/files/"+drive.fileId+"?alt=media").then(function(r){ if(!r.ok) throw 'get_'+r.status; return r.json(); }); }
+  function buildStore(){ return {titular:'Maurício Barros', fonte:'Laudos InBody120', updatedAt: state.updatedAt||new Date().toISOString(), exames: state.rows.map(cleanRec)}; }
+  function uploadFile(){
+    var body=JSON.stringify(buildStore());
+    if(drive.fileId){
+      return dfetch("https://www.googleapis.com/upload/drive/v3/files/"+drive.fileId+"?uploadType=media&fields=id", {method:'PATCH', headers:{'Content-Type':'application/json'}, body:body}).then(function(r){ if(!r.ok) throw 'patch_'+r.status; return r.json(); });
+    }
+    var boundary='inbody'+Date.now();
+    var meta={name:GDRIVE.fileName, mimeType:'application/json'};
+    var multipart='--'+boundary+'\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n'+JSON.stringify(meta)+'\r\n--'+boundary+'\r\nContent-Type: application/json\r\n\r\n'+body+'\r\n--'+boundary+'--';
+    return dfetch("https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart&fields=id", {method:'POST', headers:{'Content-Type':'multipart/related; boundary='+boundary}, body:multipart}).then(function(r){ if(!r.ok) throw 'create_'+r.status; return r.json(); }).then(function(j){ if(j.id) drive.fileId=j.id; return j; });
+  }
+  function applyStore(data){
+    if(!data || !Array.isArray(data.exames)) return false;
+    state.rows = data.exames.map(normalize);
+    state.updatedAt = data.updatedAt || new Date().toISOString();
+    persist(); render(); return true;
+  }
+  function connectDrive(){
+    if(!configured()){ driveStatus('<b>Configuração pendente:</b> falta cadastrar o Client ID do Google.', 'err'); return; }
+    if(!gisReady()){ driveStatus('Carregando o login do Google… tente de novo em alguns segundos.', 'err'); return; }
+    driveStatus('Conectando ao Google…');
+    getToken(true).then(function(){ return findFile(); }).then(function(f){
+      drive.connected=true; updateDriveUI();
+      if(f){
+        return downloadFile().then(function(remote){
+          var lu = state.updatedAt||'', ru = (remote&&remote.updatedAt)||'';
+          if(remote && ru>=lu){ applyStore(remote); driveStatus('Conectado. Dados carregados do seu Drive. <b>Sincronizado ✓</b>', 'on'); }
+          else { return uploadFile().then(function(){ driveStatus('Conectado. Seus dados locais foram enviados ao Drive. <b>Sincronizado ✓</b>', 'on'); }); }
+        });
+      }
+      return uploadFile().then(function(){ driveStatus('Conectado. Criei o arquivo <b>inbody.json</b> no seu Drive. <b>Sincronizado ✓</b>', 'on'); });
+    }).catch(function(e){
+      drive.connected=false; updateDriveUI();
+      var m=(''+(e&&e.message||e));
+      if(m==='gis_unready') driveStatus('O login do Google ainda está carregando. Tente novamente.', 'err');
+      else if(m.indexOf('access_denied')>=0 || m.indexOf('popup')>=0) driveStatus('Login cancelado ou bloqueado. Libere o pop-up e tente de novo.', 'err');
+      else driveStatus('Não consegui conectar ao Drive ('+m+'). Seus dados seguem salvos localmente.', 'err');
+    });
+  }
+  var pushT=null;
+  function scheduleDrivePush(){ if(!drive.connected) return; clearTimeout(pushT); pushT=setTimeout(pushToDrive, 1200); }
+  function pushToDrive(){
+    getToken(false).then(function(){ return uploadFile(); })
+      .then(function(){ driveStatus('Salvo no Google Drive às '+nowTime()+' <b>✓</b>', 'on'); })
+      .catch(function(e){ driveStatus('Não consegui salvar no Drive agora — dados guardados localmente. Tentarei no próximo salvamento.', 'err'); });
+  }
+  function silentResume(){
+    if(!configured() || !gisReady()) return;
+    // tenta retomar sessão sem incomodar; se o navegador exigir clique, fica no modo local
+    getToken(false).then(function(){ return findFile(); }).then(function(f){
+      if(f){ drive.connected=true; updateDriveUI(); return downloadFile().then(function(remote){ var ru=(remote&&remote.updatedAt)||'', lu=state.updatedAt||''; if(remote&&ru>=lu){ applyStore(remote); } driveStatus('Conectado ao Google Drive. <b>Sincronizado ✓</b>','on'); }); }
+    }).catch(function(){ /* fica no modo local até o clique */ });
+  }
+  // ================== FIM GOOGLE DRIVE ==================
+
+  // ---- render ----
+  function render(){
+    var rows=sorted();
+    $('btn-export').hidden = !rows.length;
+    if(rows.length===0){ renderEmpty(); $('tabs').hidden=true; renderFoot([]); return; }
+    $('tabs').hidden=false;
+    renderTab(rows); renderFoot(rows);
+  }
+  function renderTab(rows){
+    var body=$('app-body'); body.innerHTML='';
+    if(state.tab==='historico'){ body.appendChild(historySection(rows)); }
+    else { body.appendChild(kpiSection(rows)); body.appendChild(interpSection(rows)); body.appendChild(chartSection(rows)); body.appendChild(tableSection(rows)); }
+  }
+  function setTab(t){ state.tab=t; $('tab-painel').classList.toggle('active',t==='painel'); $('tab-historico').classList.toggle('active',t==='historico'); var rows=sorted(); if(rows.length) renderTab(rows); }
+  function renderEmpty(){
+    var body=$('app-body'); body.innerHTML='';
+    var d=document.createElement('div'); d.className='empty';
+    d.innerHTML='<h3>Nenhuma medição ainda</h3><p>Conecte o <b>Google Drive</b> para carregar seus dados, importe um <b>.json</b> (botão <b>Importar</b>), ou adicione um exame em <b>+ Nova medição</b>.</p>';
+    body.appendChild(d);
+  }
+
+  var KPIS=[
+    {key:'peso', label:'Peso', unit:'kg', good:'down'},
+    {key:'gordura', label:'Massa de gordura', unit:'kg', good:'down'},
+    {key:'smm', label:'Massa muscular', unit:'kg', good:'up'},
+    {key:'visceral', label:'Gordura visceral', unit:'', good:'down'}
+  ];
+  function kpiSection(rows){
+    var sec=document.createElement('section');
+    var last=rows[rows.length-1], prev=rows.length>1?rows[rows.length-2]:null;
+    var head='<div class="sec-head"><h2>Situação atual</h2><span class="note">Exame de '+brDate(last.date)+(prev?' · variação vs '+brDate(prev.date):'')+'</span></div>';
+    var grid='<div class="kpis">';
+    KPIS.forEach(function(k){
+      var cv=last[k.key], pv=prev?prev[k.key]:null;
+      var valTxt=!nn(cv)?'a confirmar':fmt(cv, k.key==='visceral'?0:1);
+      var unit=!nn(cv)?'':'<span class="u">'+k.unit+'</span>';
+      var delta='';
+      if(nn(cv)&&nn(pv)){
+        var diff=cv-pv, dir=diff>0.05?'up':(diff<-0.05?'down':'flat');
+        var cls=dir==='flat'?'flat':(dir===k.good?'up':'down');
+        var arrow=dir==='up'?'▲':(dir==='down'?'▼':'–');
+        delta='<span class="k-delta"><span class="chip '+cls+'">'+arrow+' '+fmt(Math.abs(diff), k.key==='visceral'?0:1)+'</span><span class="cmp">vs anterior</span></span>';
+      } else if(!nn(cv)){ delta='<span class="k-delta"><span class="chip flat">campo faltante</span></span>'; }
+      grid+='<div class="kpi"><span class="k-label">'+k.label+'</span><span class="k-val">'+valTxt+unit+'</span>'+delta+'</div>';
+    });
+    grid+='</div>'; sec.innerHTML=head+grid; return sec;
+  }
+  function chartSection(rows){
+    var sec=document.createElement('section');
+    sec.innerHTML='<div class="sec-head"><h2>Evolução</h2><span class="note">Massa (kg) por exame</span></div>';
+    var card=document.createElement('div'); card.className='card';
+    var wrap=document.createElement('div'); wrap.className='chart-wrap'; wrap.innerHTML=buildChart(rows); card.appendChild(wrap);
+    var lg=document.createElement('div'); lg.className='legend';
+    lg.innerHTML='<span class="lg-peso"><i></i>Peso</span><span class="lg-gordura"><i></i>Massa de gordura</span><span class="lg-smm"><i></i>Massa muscular</span>';
+    card.appendChild(lg); sec.appendChild(card); return sec;
+  }
+  function buildChart(rows){
+    var W=720,H=300,ml=46,mr=58,mt=26,mb=40;
+    var series=[{k:'peso',c:'peso'},{k:'smm',c:'smm'},{k:'gordura',c:'gordura'}];
+    var vals=[]; rows.forEach(function(r){series.forEach(function(s){var v=r[s.k]; if(nn(v)) vals.push(v);});});
+    var maxV=Math.max.apply(null, vals.concat([1])); var top=Math.ceil(maxV/10)*10, bot=0, n=rows.length;
+    var X=function(i){ return n===1? (ml+(W-ml-mr)/2) : ml + i*(W-ml-mr)/(n-1); };
+    var Y=function(v){ return mt + (1-(v-bot)/(top-bot))*(H-mt-mb); };
+    var s='<svg class="chart" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Evolução da composição corporal">';
+    for(var g=0; g<=top; g+=(top>60?20:10)){ var gy=Y(g); s+='<line class="grid" x1="'+ml+'" y1="'+gy.toFixed(1)+'" x2="'+(W-mr)+'" y2="'+gy.toFixed(1)+'"/>'; s+='<text class="cap" x="'+(ml-8)+'" y="'+(gy+3).toFixed(1)+'" text-anchor="end">'+g+'</text>'; }
+    rows.forEach(function(r,i){ s+='<text class="cap" x="'+X(i).toFixed(1)+'" y="'+(H-mb+18)+'" text-anchor="middle">'+brDate(r.date)+'</text>'; });
+    series.forEach(function(se){
+      var pts=[], present=[];
+      rows.forEach(function(r,i){ var v=r[se.k]; if(nn(v)){ pts.push(X(i).toFixed(1)+','+Y(v).toFixed(1)); present.push({i:i,v:v}); }});
+      if(pts.length>1) s+='<polyline class="ln '+se.c+'" points="'+pts.join(' ')+'"/>';
+      present.forEach(function(p){ s+='<circle class="dot '+se.c+'" cx="'+X(p.i).toFixed(1)+'" cy="'+Y(p.v).toFixed(1)+'" r="3.4"/>'; });
+      if(present.length){
+        var first=present[0], lastp=present[present.length-1];
+        s+='<text class="val" x="'+X(first.i).toFixed(1)+'" y="'+(Y(first.v)-9).toFixed(1)+'" text-anchor="middle">'+fmt(first.v,1)+'</text>';
+        if(present.length>1) s+='<text class="val" x="'+X(lastp.i).toFixed(1)+'" y="'+(Y(lastp.v)-9).toFixed(1)+'" text-anchor="middle">'+fmt(lastp.v,1)+'</text>';
+        var cvar = se.c==='gordura'?'var(--accent)':'var(--muted)';
+        s+='<text class="slabel" x="'+(W-mr+8)+'" y="'+(Y(lastp.v)+3).toFixed(1)+'" fill="'+cvar+'">'+(se.k==='smm'?'M. musc.':se.k==='peso'?'Peso':'Gordura')+'</text>';
+      }
+    });
+    s+='</svg>'; return s;
+  }
+  function tableSection(rows){
+    var sec=document.createElement('section');
+    sec.innerHTML='<div class="sec-head"><h2>Todos os exames</h2><span class="note">clique numa linha para editar · ● verde na faixa · ● fora</span></div>';
+    var wrap=document.createElement('div'); wrap.className='tbl-wrap';
+    var cols=['peso','gordura','pgc','smm','imc','visceral','whr','pontuacao'];
+    var html='<table><thead><tr><th>Exame</th>';
+    cols.forEach(function(k){ html+='<th>'+shortLabel(k)+'</th>'; });
+    html+='</tr></thead><tbody>';
+    rows.slice().reverse().forEach(function(r){
+      html+='<tr class="ex" data-date="'+r.date+'"><td>'+brDate(r.date)+'</td>';
+      cols.forEach(function(k){ var v=r[k]; var cell=!nn(v)?'<span style="color:var(--muted)">a confirmar</span>':fmt(v,decs(k)); html+='<td class="num">'+cell+flag(k,v)+'</td>'; });
+      html+='</tr>';
+    });
+    html+='<tr class="ref-row"><td>Referência</td>';
+    cols.forEach(function(k){ html+='<td class="num">'+refText(k)+'</td>'; });
+    html+='</tr></tbody></table>';
+    wrap.innerHTML=html; sec.appendChild(wrap);
+    wrap.querySelectorAll('tr.ex').forEach(function(tr){ tr.addEventListener('click', function(){ openForm(tr.getAttribute('data-date')); }); });
+    return sec;
+  }
+  function shortLabel(k){return {peso:'Peso',gordura:'Gordura',pgc:'%Gord',smm:'M.Musc',imc:'IMC',visceral:'Visceral',whr:'C-Q',pontuacao:'Pontos'}[k]||k;}
+  function refText(k){ if(k==='imc') return '18,5–25,0'; if(k==='visceral') return '≤ 9'; if(k==='whr') return '≤ 0,90'; return '—'; }
+  function flag(k,v){ var f=BY[k]; if(!f||!f.ref||!nn(v)) return ''; if(v>f.ref.max) return '<span class="flag '+(f.ref.soft?'warn':(v>f.ref.max*1.08?'crit':'warn'))+'"></span>'; return '<span class="flag ok"></span>'; }
+
+  // ---- interpretação ----
+  var IMETRICS=[
+    {k:'peso',label:'Peso',unit:'kg',good:'down',d:1},{k:'gordura',label:'Gordura',unit:'kg',good:'down',d:1},
+    {k:'smm',label:'Músculo',unit:'kg',good:'up',d:1},{k:'pgc',label:'%Gord',unit:'pp',good:'down',d:1},
+    {k:'imc',label:'IMC',unit:'',good:'down',d:1},{k:'visceral',label:'Visceral',unit:'',good:'down',d:0},{k:'whr',label:'C-Q',unit:'',good:'down',d:2}
+  ];
+  function imcStatus(v){ if(!nn(v)) return {label:'—',cls:'flat'}; if(v<18.5) return {label:'abaixo',cls:'warn'}; if(v<25) return {label:'normal',cls:'ok'}; if(v<30) return {label:'sobrepeso',cls:'warn'}; return {label:'obesidade',cls:'crit'}; }
+  function viscStatus(v){ if(!nn(v)) return {label:'—',cls:'flat'}; if(v<=9) return {label:'saudável',cls:'ok'}; if(v<=14) return {label:'elevado',cls:'warn'}; return {label:'alto',cls:'crit'}; }
+  function whrStatus(v){ if(!nn(v)) return {label:'—',cls:'flat'}; if(v<=0.90) return {label:'saudável',cls:'ok'}; if(v<=0.95) return {label:'elevado',cls:'warn'}; return {label:'alto',cls:'crit'}; }
+  function narrative(cur,prev){
+    var parts=[];
+    if(prev && nn(cur.peso) && nn(prev.peso)){
+      var dp=cur.peso-prev.peso;
+      var s='De '+brDate(prev.date)+' a '+brDate(cur.date)+', o peso '+(Math.abs(dp)<0.05?'ficou estável':((dp<0?'caiu ':'subiu ')+fmt(Math.abs(dp),1)+' kg'));
+      if(nn(cur.gordura)&&nn(prev.gordura)&&nn(cur.smm)&&nn(prev.smm)){
+        var dg=cur.gordura-prev.gordura, dm=cur.smm-prev.smm;
+        s+=' ('+signed(dg,1)+' kg de gordura, '+signed(dm,1)+' kg de músculo)';
+        if(dp<-0.1){ if(Math.abs(dm)<0.3 && dg<-0.1) s+=' — perda concentrada na gordura, preservando o músculo: padrão de recomposição saudável.'; else if(dm<-0.4) s+=' — atenção: parte da perda foi de músculo; reforçar proteína e treino de força ajuda a preservá-lo.'; else s+='.'; }
+        else if(dp>0.1){ if(dm>0.3 && dg<0.2) s+=' — ganho principalmente de músculo.'; else if(dg>0.3) s+=' — ganho principalmente de gordura; vale atenção.'; else s+='.'; }
+        else s+='.';
+      } else s+='.';
+      parts.push(s);
+    } else if(!prev){ parts.push('Primeiro exame da série — serve de linha de base para comparar os próximos.'); }
+    var st=[];
+    if(nn(cur.imc)) st.push('IMC '+fmt(cur.imc,1)+' ('+imcStatus(cur.imc).label+')');
+    if(nn(cur.visceral)) st.push('gordura visceral '+fmt(cur.visceral,0)+' ('+viscStatus(cur.visceral).label+')');
+    if(nn(cur.whr)) st.push('cintura-quadril '+fmt(cur.whr,2)+' ('+whrStatus(cur.whr).label+')');
+    if(st.length) parts.push('Situação atual: '+st.join('; ')+'.');
+    var miss=REQUIRED.filter(function(f){ return f.key!=='date' && !nn(cur[f.key]); });
+    if(miss.length) parts.push('Campo(s) a confirmar: '+miss.map(function(f){return f.label;}).join(', ')+'.');
+    return parts.join(' ');
+  }
+  function stChip(label,v,d,st){ return '<span class="st '+st.cls+'"><span class="lbl">'+label+'</span> '+(nn(v)?fmt(v,d):'—')+' · '+st.label+'</span>'; }
+  function interpCard(cur,prev){
+    var h='<div class="interp">';
+    h+='<div class="status-row">'+stChip('IMC',cur.imc,1,imcStatus(cur.imc))+stChip('Visceral',cur.visceral,0,viscStatus(cur.visceral))+stChip('Cintura-quadril',cur.whr,2,whrStatus(cur.whr))+'</div>';
+    if(prev){
+      var ds=IMETRICS.map(function(m){ var cv=cur[m.k], pv=prev[m.k]; if(!nn(cv)||!nn(pv)) return ''; var df=cv-pv, tol=(m.k==='whr'?0.005:0.05), dir=Math.abs(df)<tol?'flat':(df>0?'up':'down'); var cls=dir==='flat'?'flat':(dir===m.good?'good':'bad'); var arrow=dir==='up'?'▲':(dir==='down'?'▼':'–'); return '<span class="dl '+cls+'"><span class="dn">'+m.label+'</span><span class="dv">'+arrow+' '+fmt(Math.abs(df),m.d)+(m.unit?' '+m.unit:'')+'</span></span>'; }).filter(Boolean);
+      if(ds.length) h+='<div class="delta-row">'+ds.join('')+'</div>';
+    }
+    h+='<p class="nar">'+narrative(cur,prev)+'</p>';
+    h+='<p class="disc">Interpretação automática a partir dos números do laudo — não substitui avaliação de um profissional de saúde.</p></div>';
+    return h;
+  }
+  function interpSection(rows){
+    var sec=document.createElement('section');
+    var last=rows[rows.length-1], prev=rows.length>1?rows[rows.length-2]:null;
+    sec.innerHTML='<div class="sec-head"><h2>Leitura automática</h2><span class="note">Exame de '+brDate(last.date)+'</span></div>';
+    var box=document.createElement('div'); box.innerHTML=interpCard(last,prev); sec.appendChild(box.firstChild); return sec;
+  }
+  function historySection(rows){
+    var sec=document.createElement('section'); sec.style.marginTop='18px';
+    sec.innerHTML='<div class="sec-head"><h2>Histórico de leituras</h2><span class="note">Do mais recente ao mais antigo</span></div>';
+    rows.slice().reverse().forEach(function(r){ var idx=rows.indexOf(r), prev=idx>0?rows[idx-1]:null; var item=document.createElement('div'); item.className='hist-item'; item.innerHTML='<div class="hh"><h3>'+brDate(r.date)+'</h3><span class="tag">'+(prev?'vs '+brDate(prev.date):'linha de base')+'</span></div>'+interpCard(r,prev); sec.appendChild(item); });
+    return sec;
+  }
+  function renderFoot(rows){ var f=$('foot'); var base=rows.length? (rows.length+' exame(s)') : 'Base vazia'; f.innerHTML=base+'. Dados no seu Google Drive quando conectado; cópia local no navegador. Dados de uso pessoal — escopo <code>drive.file</code> (o site só acessa o próprio arquivo).'; }
+
+  // ---- form ----
+  function buildForm(){
+    var c=$('form-fields'); c.innerHTML=''; var cur='';
+    FIELDS.forEach(function(f){
+      if(f.group!==cur){ cur=f.group; var t=document.createElement('div'); t.className='grp-title'; t.textContent=f.group; c.appendChild(t); }
+      var w=document.createElement('div'); w.className='field'; w.id='fld-'+f.key;
+      var req=f.req?' <span class="req">*</span>':''; var unit=f.unit?' <span class="u">('+f.unit+')</span>':'';
+      w.innerHTML='<label for="in-'+f.key+'">'+f.label+req+unit+'</label><input id="in-'+f.key+'" name="'+f.key+'" type="'+(f.type==='date'?'date':'text')+'" inputmode="'+(f.type==='date'?'':'decimal')+'" autocomplete="off">';
+      c.appendChild(w);
+    });
+  }
+  function openForm(editDate){
+    clearBanners(); clearBad(); $('form').reset();
+    state.editing = editDate||null;
+    $('form-title').textContent = state.editing? 'Editar medição' : 'Nova medição';
+    $('btn-del').hidden = !state.editing;
+    if(state.editing){
+      var rec=state.rows.filter(function(r){return r.date===state.editing;})[0];
+      if(rec){ FIELDS.forEach(function(f){ var el=$('in-'+f.key); if(!el) return; var v=rec[f.key]; el.value = f.key==='date'? (rec.date||'') : (nn(v)? String(v).replace('.',','):''); }); }
+    }
+    $('overlay').hidden=false; var d=$('in-date'); if(d) d.focus();
+  }
+  function closeForm(){ $('overlay').hidden=true; state.editing=null; }
+  function clearBanners(){ $('banner-miss').className='banner miss'; $('banner-sum').className='banner sum'; }
+  function clearBad(){ FIELDS.forEach(function(f){ var w=$('fld-'+f.key); if(w) w.classList.remove('bad'); }); }
+  function validateAndSave(){
+    clearBanners(); clearBad();
+    var vals={}; FIELDS.forEach(function(f){ var el=$('in-'+f.key); vals[f.key]= f.key==='date'? (el.value||'') : el.value.trim(); });
+    var missing=REQUIRED.filter(function(f){ return f.key==='date'? !vals.date : num(vals[f.key])===null; });
+    if(missing.length){
+      missing.forEach(function(f){ var w=$('fld-'+f.key); if(w) w.classList.add('bad'); });
+      $('banner-miss').className='banner miss show';
+      $('banner-miss').innerHTML='<b>Falta preencher '+missing.length+' campo'+(missing.length>1?'s':'')+':</b> '+missing.map(function(f){return f.label;}).join(', ')+'. Complete para salvar.';
+      var first=$('in-'+missing[0].key); if(first) first.focus(); return;
+    }
+    var comp=['agua','proteina','minerais','gordura'], have=comp.every(function(k){return num(vals[k])!==null;}) && num(vals.peso)!==null;
+    if(have){
+      var soma=comp.reduce(function(s,k){return s+num(vals[k]);},0), peso=num(vals.peso), diff=Math.abs(soma-peso);
+      if(diff>1.2){
+        ['agua','proteina','minerais','gordura','peso'].forEach(function(k){ var w=$('fld-'+k); if(w) w.classList.add('bad'); });
+        $('banner-sum').className='banner sum show';
+        $('banner-sum').innerHTML='<b>Os valores não fecham.</b> Água+Proteína+Minerais+Gordura = '+fmt(soma,1)+' kg, mas o Peso é '+fmt(peso,1)+' kg (diferença de '+fmt(diff,1)+' kg). Revise antes de salvar.';
+        return;
+      }
+    }
+    var rec={date:vals.date}; FIELDS.forEach(function(f){ if(f.key==='date') return; rec[f.key]=num(vals[f.key]); });
+    save(rec);
+  }
+  function save(rec){
+    if(state.editing && state.editing!==rec.date){ state.rows=state.rows.filter(function(r){return r.date!==state.editing;}); }
+    var i=-1; for(var k=0;k<state.rows.length;k++){ if(state.rows[k].date===rec.date){ i=k; break; } }
+    if(i>=0) state.rows[i]=rec; else state.rows.push(rec);
+    touch(); persist(); closeForm(); render(); toast('Medição salva.'); scheduleDrivePush();
+  }
+  function delRec(){
+    if(!state.editing) return;
+    if(!confirm('Excluir o exame de '+brDate(state.editing)+'? Esta ação não pode ser desfeita.')) return;
+    state.rows=state.rows.filter(function(r){return r.date!==state.editing;});
+    touch(); persist(); closeForm(); render(); toast('Medição excluída.'); scheduleDrivePush();
+  }
+
+  // ---- import / export ----
+  function normalize(raw){ var rec={date:raw.date||''}; FIELDS.forEach(function(f){ if(f.key==='date') return; rec[f.key]=num(raw[f.key]); }); return rec; }
+  function doImport(file){
+    var fr=new FileReader();
+    fr.onload=function(){
+      try{
+        var o=JSON.parse(fr.result); var arr=Array.isArray(o)?o:(o.exames||[]);
+        if(!arr || !arr.length){ toast('Arquivo sem exames.'); return; }
+        var map={}; state.rows.forEach(function(r){map[r.date]=r;});
+        var added=0, upd=0;
+        arr.forEach(function(raw){ var rec=normalize(raw); if(!rec.date) return; if(map[rec.date]) upd++; else added++; map[rec.date]=rec; });
+        state.rows=Object.keys(map).map(function(k){return map[k];});
+        touch(); persist(); render(); toast('Importado: '+added+' novo(s), '+upd+' atualizado(s).'); scheduleDrivePush();
+      }catch(e){ toast('Não consegui ler o JSON. Verifique o arquivo.'); }
+    };
+    fr.onerror=function(){ toast('Falha ao abrir o arquivo.'); };
+    fr.readAsText(file);
+  }
+  function cleanRec(r){ var o={date:r.date}; FIELDS.forEach(function(f){ if(f.key==='date') return; o[f.key]=nn(r[f.key])?r[f.key]:null; }); return o; }
+  function buildJSON(rows){ return JSON.stringify({titular:'Maurício Barros', fonte:'Laudos InBody120', gerado:new Date().toISOString(), exames:rows.map(cleanRec)}, null, 2); }
+  function buildCSV(rows){ var ks=FIELDS.map(function(f){return f.key;}); var lines=[ks.join(',')]; rows.forEach(function(r){ lines.push(ks.map(function(k){ return nn(r[k])?String(r[k]):''; }).join(',')); }); return lines.join('\n'); }
+  function brToday(){ var d=new Date(); function p(n){return (n<10?'0':'')+n;} return p(d.getDate())+'/'+p(d.getMonth()+1)+'/'+d.getFullYear(); }
+  function metaLabel(k){ return {peso:'Peso',gordura:'Gordura',smm:'Músculo',pgc:'% Gordura',imc:'IMC',visceral:'Visceral',whr:'Cintura-quadril'}[k]||k; }
+  function buildReport(rows){
+    var L=['# Composição Corporal — Maurício Barros','','_Relatório gerado em '+brToday()+' a partir dos laudos InBody120 ('+rows.length+' exame(s))._','','## Série de exames',''];
+    var cols=[['date','Exame'],['peso','Peso (kg)'],['gordura','Gordura (kg)'],['pgc','% Gord'],['smm','Músculo (kg)'],['imc','IMC'],['visceral','Visceral'],['whr','C-Q'],['pontuacao','Pontos']];
+    L.push('| '+cols.map(function(c){return c[1];}).join(' | ')+' |');
+    L.push('|'+cols.map(function(){return '---';}).join('|')+'|');
+    rows.forEach(function(r){ L.push('| '+cols.map(function(c){ return c[0]==='date'? brDate(r.date) : (nn(r[c[0]])?fmt(r[c[0]],decs(c[0])):'a confirmar'); }).join(' | ')+' |'); });
+    L.push(''); L.push('## Leitura por exame'); L.push('');
+    rows.slice().reverse().forEach(function(r){ var idx=rows.indexOf(r), prev=idx>0?rows[idx-1]:null; L.push('### '+brDate(r.date)+(prev?' (vs '+brDate(prev.date)+')':' (linha de base)')); L.push(''); L.push(narrative(r,prev)); L.push(''); });
+    if(rows.length>1){ var a=rows[0], b=rows[rows.length-1]; L.push('## Panorama geral ('+brDate(a.date)+' → '+brDate(b.date)+')'); L.push(''); ['peso','gordura','smm','pgc','imc'].forEach(function(k){ if(nn(a[k])&&nn(b[k])){ L.push('- '+metaLabel(k)+': '+fmt(a[k],decs(k))+' → '+fmt(b[k],decs(k))+' ('+signed(b[k]-a[k],decs(k))+')'); } }); L.push(''); }
+    L.push('---'); L.push('_Interpretação automática baseada nos números. Não substitui avaliação profissional._');
+    return L.join('\n');
+  }
+  function download(fn, data, mime){ var blob=new Blob([data],{type:(mime||'text/plain')+';charset=utf-8'}); var url=URL.createObjectURL(blob); var a=document.createElement('a'); a.href=url; a.download=fn; document.body.appendChild(a); a.click(); setTimeout(function(){ URL.revokeObjectURL(url); a.remove(); },120); }
+  function doExport(type){
+    var rows=sorted(); if(!rows.length) return;
+    var date=new Date().toISOString().slice(0,10);
+    if(type==='json'){ download('inbody_dados_'+date+'.json', buildJSON(rows), 'application/json'); }
+    else if(type==='csv'){ download('inbody_planilha_'+date+'.csv', buildCSV(rows), 'text/csv'); }
+    else { download('inbody_relatorio_'+date+'.md', buildReport(rows), 'text/markdown'); }
+    $('export-overlay').hidden=true; toast('Arquivo gerado.');
+  }
+
+  // ---- wire ----
+  buildForm();
+  $('btn-new').addEventListener('click', function(){ openForm(null); });
+  $('btn-cancel').addEventListener('click', closeForm);
+  $('btn-del').addEventListener('click', delRec);
+  $('form').addEventListener('submit', function(e){ e.preventDefault(); validateAndSave(); });
+  $('overlay').addEventListener('click', function(e){ if(e.target===$('overlay')) closeForm(); });
+  $('tab-painel').addEventListener('click', function(){ setTab('painel'); });
+  $('tab-historico').addEventListener('click', function(){ setTab('historico'); });
+  $('imp-file').addEventListener('change', function(e){ var f=e.target.files&&e.target.files[0]; if(f) doImport(f); e.target.value=''; });
+  $('btn-export').addEventListener('click', function(){ if(!sorted().length) return; $('export-overlay').hidden=false; });
+  $('exp-close').addEventListener('click', function(){ $('export-overlay').hidden=true; });
+  $('export-overlay').addEventListener('click', function(e){ if(e.target===$('export-overlay')) $('export-overlay').hidden=true; });
+  $('exp-md').addEventListener('click', function(){ doExport('md'); });
+  $('exp-json').addEventListener('click', function(){ doExport('json'); });
+  $('exp-csv').addEventListener('click', function(){ doExport('csv'); });
+  $('btn-drive').addEventListener('click', connectDrive);
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ if(!$('overlay').hidden) closeForm(); else if(!$('export-overlay').hidden) $('export-overlay').hidden=true; } });
+
+  load();
+  render();
+  if(!configured()){ driveStatus('Modo local (dados neste navegador). A sincronização com o Google Drive será ativada após configurar o Client ID.'); }
+  // tenta retomar a sessão do Drive sem incomodar, quando a biblioteca do Google terminar de carregar
+  setTimeout(silentResume, 1500);
+})();
+</script>
+</body>
+</html>

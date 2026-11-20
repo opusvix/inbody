@@ -15,7 +15,7 @@ Cada laudo InBody120 é uma folha A4 com a foto de **um único momento**. Com os
 - **Evolução:** gráfico de peso, gordura e massa muscular por exame.
 - **Histórico** com inclusão, edição e exclusão de medições.
 - **Exportação** em JSON (backup), CSV (planilha) e relatório Markdown com as interpretações.
-- Os dados ficam no navegador (`localStorage`); nada é enviado para servidor.
+- **Sincronização no Google Drive:** ao conectar sua conta Google, os dados ficam num arquivo `inbody.json` no seu Drive (escopo mínimo `drive.file` — o site só acessa o arquivo que ele próprio cria). Offline, uma cópia fica no navegador (`localStorage`).
 
 ## Resultado com os dados reais (4 exames, nov/2025 a out/2026)
 
